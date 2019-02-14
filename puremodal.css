@@ -8,8 +8,8 @@
  * Date: 2018-06-01
  */
 
-.window-modal {
-  position: absolute;
+.puremodal {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,22 +17,20 @@
   z-index: 255;
 }
 
-.window-modal > .overlay {
+.puremodal > .overlay {
   background-color: rgba(0, 0, 0, .5);
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.window-modal > .window {
+.puremodal > .window {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 90%;
-  height: 60%;
   background-color: #fff;
   overflow: hidden;
 }
