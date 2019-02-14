@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+    <title>puremodal.js example</title>
+
+    <link rel="stylesheet" href="../puremodal.css">
+    <script src="../puremodal.js"></script>
+
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        height: 120%;
+        background-color: #eee;
+        background-image:
+          linear-gradient(45deg, #ddd 25%, transparent 0),
+          linear-gradient(45deg, transparent 75%, #ddd 0),
+          linear-gradient(45deg, #ddd 25%, transparent 0),
+          linear-gradient(45deg, transparent 75%, #ddd 0);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px, 30px 30px, 60px 60px;
+      }
+
+      /* Custom style */
+      #modal-2 > .window {
+        width: 90%;
+        height: 60%;
+        border-radius: .5em;
+        box-shadow: 0 0 3em rgba(0,0,0,.5);
+      }
+
+      #modal-2 > .window > header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 1;
+        background-color: #fff;
+        border-bottom: 1px #ccc solid;
+        line-height: 3em;
+        padding: 0 1em;
+        font-weight: bold;
+      }
+
+      #modal-2 > .window > div {
+        height: 100%;
+        overflow-y: scroll;
+        padding: 4em 1em 1em;
+        box-sizing: border-box;
+      }
+
+      #modal-2 a.close {
+        font-size: 2em;
+        position: absolute;
+        top: .2em;
+        right: .5em;
+        line-height: 1em;
+        cursor: pointer;
+      }
+    </style>
+    <script defer>
+      window.onload = function() {
+        var modal_1 = new PureModal(window.document.getElementById('modal-1'));
+        window.document.getElementById('button-1').addEventListener('click', function() { modal_1.open() });
+
+        var modal_2 = new PureModal(window.document.getElementById('modal-2'));
+        window.document.getElementById('button-2').addEventListener('click', function() { modal_2.open() });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>puremodal.js example</h1>
+    <section>
+      <h2>Skelton</h2>
+      <button id="button-1" type="button">Open</button>
+      <div id="modal-1" class="puremodal">
+        <div class="window">
+          <button type="button" class="close">Close</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Custom style</h2>
+      <button id="button-2" type="button">Open</button>
+      <div id="modal-2" class="puremodal">
+        <div class="overlay close"></div>
+        <div class="window">
+          <header>
+            Title
+            <a class="close">&times;</a>
+          </header>
+          <div>
+            ↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>
+            ↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>
+            ↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>
+            ↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>↓<br/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
